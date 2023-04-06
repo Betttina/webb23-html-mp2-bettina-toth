@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Boka bord på Koreana - Den bästa koreanska restaurangen i Helsingborg</title>
+  <meta name="description" content="Koreansk restaurang i Helsingborg. Boka bord på Koreana för en minnesvärd och autentisk matupplevelse.">
+  <meta name="keywords" content="Korean food, Korean restaurant, book a table, boka bord, lokal restaurang, authentic Korean food, autentisk matupplevelse, Korean BBQ, Korean fried chicken, Kimchi, Bibimbap, Bulgogi, Spicy Korean food, Vegetarian Korean food, friterat, friterad, fried rice, lokalt, korean restaurant, middag, Restaurant reservations, Korean culture">
+  <link rel="stylesheet" href="DesignKoreana.css">
+  <link rel="icon" href="bilder/logokor.jpeg">
+
+</head>
+<style>
+
+  nav {
+    margin-bottom: 10vh; /*avstånd från navmeny till nästa element, kunde ha satt klass men hoppas detta är ok*/
+  }
+
+
+  footer {
+    margin-top: 20vh; /*samma här från footern uppåt*/
+  }
+
+</style>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Hem</a></li>
+    <li><a href="OmOssKoreana.html">Om Oss</a></li>
+    <li><a href="Meny_Koreana.html">Meny</a></li>
+    <li><a href="BokaBord.html">Boka bord</a></li>
+
+
+  </ul>
+  <div class="logos"><img src="bilder/Koreansk mat.png" alt="logo"></div>
+  <div class="menybokaknapp">
+    <button><a href="BokaBord.html">Boka bord</a></button>
+    <button style="margin-left: 30px;"><a href="Meny_Koreana.html">Meny</a></button>
+  </div>
+
+
+</nav>
+
+<header>
+
+
+</header>
+
+<div class="booking-form">
+  <h2>Boka bord</h2>
+  <form>
+    <label for="name">Namn:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="date">Datum:</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="time">Tid:</label>
+    <input type="time" id="time" name="time" required>
+
+    <label for="requests">Övriga önskemål:</label>
+    <textarea id="requests" name="requests"></textarea>
+
+    <button id="knappen" type="submit">Boka</button>
+  </form>
+</div>
+
+
+<footer>
+  <div class="address">
+    <p><strong>Koreana</strong></p>
+    <p>Bruksgatan 30</p>
+    <p>111 11 Helsingborg</p>
+  </div>
+  <div class="contact-info">
+    <a href="tel:+4642182843">Ring oss här</a>
+    <br><br>
+    <a href="mailto:vividwish@hotmail.com">Kontakta oss på mejl</a>
+    <br><br>
+    <div class="social-media">
+      <a href="https://www.facebook.com/koreana.hbg" target="_blank"><img src="bilder/face.png"
+                                                                          alt="Facebook"></a>
+      <a href="https://www.instagram.com/koreana_helsingborg/" target="_blank"><img src="bilder/insta.png"
+                                                                                    alt="Instagram"></a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

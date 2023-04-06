@@ -1,0 +1,523 @@
+body {
+    background-image: url('bilder/högreupplös.jpg'); /* hänvisning till bakgrundsbilden */
+    background-size: cover; /* täcker hela hemsidan med vald bild, blir bakgrundsbild */
+    background-position: center; /*centrerar bakgrundsbilden på skärmen*/
+    color: white; /*textfärg på hela sidan */
+    font-family: "Open Sans",Arial,sans-serif; /* typsnittarna jag har valt, i denna ordning*/
+    letter-spacing: 2px; /*mellanrum mellan bokstäverna, gör det mer luftigt och lättläst */
+}
+
+main {
+    font-family: "Inconsolata", "Helvetica Neue", Helvetica, Arial, sans-serif;
+} /* typsnitten som används inom main taggen på hemsidan i prioritetsordning. ordningen är hemsidans rendering */
+
+
+.container {
+    display: flex; /*placerad i en flexbox layout*/
+}
+
+
+.sidebar {
+    width: 25%; /* tar bara upp 25% av bredden av elementet */
+    background-color: #f69729; /*bakgrundsfärg på sidebar där öppettider står*/
+    padding: 20px; /*avståndet från innehållet till kanten av elementet*/
+    border-radius: 10px; /* rundade hörn på elementet */
+    box-shadow: 0 0 10px rgba(14, 14, 14, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.6); /* Skuggeffekt till den orange färgen*/
+}
+
+iframe {
+    width: 400px; /* angiven höjd och bredd på detta element. denna är för inbäddat innehåll: kartan från google, som visas på index hemsidan*/
+    height: 300px;
+}
+
+
+.linktomap {
+    display: flex; /*diven är placerad i en flexbox layout*/
+    justify-content: center; /* centrerar innehållet horisontellt i elementet */
+    align-items: center; /* vertikal justering, drar diven till mitten av elementet*/
+    align-content: center; /*centrar innehållet relativt till varandra (andra flexelement)*/
+    background-color: rgb(153, 225, 64); /* bakgrundsfärg med 50% opacitet */
+    border-radius: 10px; /* rundade hörn */
+    height: 50px; /*höjd på diven*/
+    width: 200px; /*bredd i antal pixlar*/
+    padding: 20px; /*utrymme från elementets kant*/
+    margin-top: 20px; /*utrymme till elementet ovan*/
+}
+
+
+.content {
+    width: 75%; /* detta element tar upp 3/4 av förälder-elementet*/
+    padding: 1px; /* utrymme från innehållet till elementets kanter i denna diven som heter content*/
+}
+
+
+.image-box {
+    flex: 1 1 30%; /* i flexlayout: kan sträckas båda i bredd och höjd och det tar upp 30% av omgivande elementet*/
+    margin: 10px;
+}
+
+.image-box img {
+    width: 100%;
+    max-height: 320px;
+}
+
+.social-media img {
+    height: 50px;
+    width: 50px;
+
+}
+
+.logos {
+    display: flex; /* anpassar sig dynamiskt beroende på skärmstorlek, elementet är i flexlayout */
+    justify-content: center; /* centrerad längst x-axeln i elementet */
+}
+
+
+.text-box, .flex-container {
+    background-color: rgba(100, 100, 100, 0.78); /* färg i rgba i gråskala, med genomskinglighet 78% */
+    padding: 1vh;
+    border-radius: 15px; /* rundade kanter */
+    font-size: 18px; /* textstorlek i elementet */
+}
+
+
+.utforska {
+    margin-top: 50px;
+    padding: 50px 0;
+}
+
+.flex-container {
+    display: flex; /* dynamisk layout anpassning till skärmens storlek */
+    flex-wrap: wrap; /*  placeras på en eller flera rader beroende på hur mycket som får plats, precis som man läser en bok (renderingen) */
+    justify-content: center; /* centreras horisontellt */
+    align-items: center; /* centreras vertikalt enligt elementet */
+}
+
+.text-box2 {
+    flex: 1 1 400px; /* första 1:an visar hur mycket utrymme flex-elementet ska ta upp i relation till
+    andra flex-element i samma flex-container. den andra är hur mycket flexelementet ska krympa om det inte finns tillräckligt
+    med utrymme i flexboxen. och storlek på hela elementet (regeln som prioriteras innan de andra */
+    padding: 0 20px;
+}
+
+.text-box2 h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.text-box2 p {
+    font-size: 17px;
+    line-height: 1.5;
+    text-align: justify; /* skapar en balanserad (mer lättläst och luftigt) rak layout för texten, anpassas till elementets marginaler */
+}
+
+.image-box {
+    flex: 1 1 250px;
+    margin: 20px;
+    text-align: center;
+    position: relative; /* justering av elementets position, relativt till andra element */
+}
+
+.image-box img {
+    width: 100%;
+    height: 30vh;
+    transition: all 0.5s ease-in-out; /* påverkas alla css egenskaper i elementet, en mjuk övergång med 0,5 sekunder. */
+}
+
+.image-box h5 {
+    position: absolute; /* gör att elementet kan placeras mer fritt, oberoende av förhållande till andra element */
+    bottom: 0;
+    left: 0; /* med bottom, placerar elementet längst ner i vänstra hörnet i containern*/
+    width: 100%; /* elementet tar upp hela möjliga bredden i sin behållare */
+    padding: 10px; /* fyller ut 10 pixlar runt innehållet i elementet */
+    margin: 0; /* inga marginaler runt elementet */
+    background-color: #e19940;
+    font-size: 16px;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    transform: translateY(100%); /* när man hovrar över bilden, flyttas h5 texten uppåt för att bli mer synlig för användaren */
+}
+
+.image-box:hover img {
+    transform: scale(1.1); /* bilden förstoras 10% mer */
+}
+
+.image-box:hover h5 {
+    transform: translateY(0); /* h5 texten återgår till sin ursprungsposition efter hover, tillsammans med
+    de andra transform effekterna så kommer bildtiteln uppåt när man hovrar över bilden med muspekaren och sedan återgår till
+    hur det var innan man hovrade. */
+}
+
+
+/********** avslut på css-egenskaper till index sidan specifikt *************/
+
+nav {
+    background-color: white; /* bakgrundfärg på nav-meny */
+    border-radius: 20px; /* rundar hörnen på hela elementet */
+}
+
+nav ul {
+    margin: 0; /* utrymme runt elementet */
+    list-style: none; /* eftersom det är en lista, men vill inte punkterna så tar vi bort den stilen */
+    display: flex; /* ordnas i flex-layout */
+    justify-content: flex-end; /* justeras horisontellt till höger */
+    font-family: "Inconsolata", "Helvetica Neue", Helvetica, Arial, sans-serif; /* ändrar typsnitt i nav meny */
+    font-size: x-large; /* större storlek på valda typsnittet */
+    padding-right: 40px; /* utrymme för texten i listan för att justera positionering */
+    padding-top: 20px; /* utrymme uppåt till elementets kant överst */
+}
+
+nav li {
+    margin-right: 20px; /* för varje listelementet i navmenyn, marginal till höger på 20 pixlar */
+}
+
+nav li:last-child {
+    margin-right: 0; /* ingen marginal till höger för sista elementet i listan i navmenyn */
+}
+
+nav a {
+    display: block; /* länkarna visas som block-element i nav-meny */
+    padding: 10px; /* utfyllnad runt länkarna, ger mer bakgrund runt länk-text */
+    color: #333; /* textfärgen blir grå */
+    text-decoration: none; /* ingen sträck under länktexterna */
+    background-color: #ffcc00; /* bakgrundsfärg (gul, innan man hovrar)  */
+    transition-property: background-color; /* övergångseffekt vid interaktion med länkarna */
+    transition-duration: 0.3s; /* övergången till bakgrundsfärgen */
+}
+
+
+
+nav a:hover {
+    background-color: #e19940; /* denna bakgrundsfärgen kommer på länkarna när man hovrar (orange) */
+    box-shadow: 2px 2px 5px #888888; /* horisontell skugga och vertikalskugga, hur mycket den sträcker sig, värde på spridning och skuggans färg */
+    color: white; /* textfärg när man hovrar, blir till vitt */
+    transform: scale(1.2); /* hur mycket nav elementet förstoras (+20%) */
+}
+
+nav img {
+    width: 320px; /* storlek bredd och sedan höjd */
+    height: 320px;
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    background-color: #ffcc00; /* färgen på knappen */
+    border: none; /* inga kanter*/
+    border-radius: 20px; /* runda av hörnen */
+    color: white; /* textfärgen */
+    cursor: pointer; /* att muspekaren blir till en hand med pekfinger som pekar*/
+    font-size: 16px; /* typsnittsstorlek */
+    font-weight: bold; /* tjockare text */
+    padding: 15px 40px; /* ändra paddingen */
+    text-align: center; /*centrerad text */
+    text-transform: uppercase; /* caps lock */
+    transition-duration: 0.4s; /* övergångseffekt på hover */
+}
+
+.menybokaknapp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
+
+button a {
+    color: #f8642b; /* textfärg till button element*/
+}
+
+nav.open ul {
+    display: block; /* när nav menyn har klassen öppen så visas listan i block */
+}
+
+/********** nav meny relaterat avslutat här **********/
+
+/*Om oss sidan*/
+
+
+.reviews {
+    margin-top: 50px;
+}
+
+.review {
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.review h3 {
+    margin-top: 0;
+}
+
+.review p {
+    margin-bottom: 0;
+}
+
+.rating {
+    font-size: 24px;
+    color: #ffc107;
+}
+
+.reviews {
+    background-color: rgba(65, 64, 64, 0.76);
+    padding: 5px;
+    border-radius: 15px;
+    font-size: 14px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.about-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(80, 77, 77, 0.77);
+    padding: 30px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-family: Roboto, sans-serif;
+    color: rgba(220, 207, 201, 0.89);
+}
+
+.about-us h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+
+}
+
+.about-us-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.about-us-image {
+    flex: 1; /* tar upp hela utrymmet i flex-boxen */
+    margin-right: 50px;
+}
+
+.about-us-image img {
+    max-width: 100%;
+    height: 500px;
+}
+
+.about-us-text {
+    flex: 1;
+    font-size: 18px;
+    line-height: 1.5; /*radavstånd */
+    text-align: left;
+}
+/* avslut på Om oss sidan*/
+
+.menybokaknapp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+
+}
+
+/******** Css till Meny sidan */
+
+
+
+.featured-dishes {
+    background-color: rgba(100, 100, 100, 0.78); /* bakgrundsfärg med rgb skala och 78% i genomskinglighet på elementets bakgrund*/
+    padding: 50px 0; /* toppen och botten är 50 pixlar avstånd i nästa element, vänster och höger sida 0px*/
+    text-align: center; /*centreras centralt i x och y axel led*/
+
+    width: 150vh; /*bredden på elemntet är 150 view hight*/
+    color: black; /* fontfärg i denna diven, alltså menybeskrivningen samt pris*/
+    justify-content: center;
+
+}
+
+.dish-container {
+    display: grid; /* elementet sätts i grid layout */
+    justify-content: space-between; /* blir bredd mellan elementet i horisontell axel */
+    flex-wrap: wrap; /* om elementet tar upp för mycket bredd, wrap gör att elementen staplar sig på varandra*/
+    max-width: 1000px; /* maximala bredden på elementet*/
+    margin: 0 auto; /* i top och bottom finns ingen margin*/
+    grid-template-columns: repeat(2, 1fr); /* i denna gridlayout finns två kolumner, och varje kolumn tar upp lika mycket av den tillgängliga bredden*/
+    grid-gap: 20px; /*avstånd mellan element*/
+}
+
+.box {
+    background-color: #fff; /* divens bakgrundsfärg*/
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /*skuggeffekt på bakgrundsbildsfärgen*/
+    border-radius: 10px; /* rundade kanter på elementet*/
+    overflow: hidden; /* överflöd av innehåll/bilden syns inte, utan placeras i kolumnens tillgängliga storlek*/
+    margin-bottom: 30px;
+}
+
+.article img {
+    max-width: 100%; /* elementet kan inte bli bredare än sin förälder, bra för responsivitet på layout*/
+
+}
+
+.article h3 {
+    font-size: 1.5rem; /* textstorlek */
+    margin: 20px;
+}
+
+.article p {
+    font-size: 1.2rem;
+    margin: 0 20px 20px; /* mellanrum mellan elementen till vänster, höger och botten*/
+}
+
+.price {
+    font-weight: bold; /* tjockare text för att få det att framträda bättre*/
+    font-size: 1.5rem; /*text storlek */
+    margin: 0 20px 20px;
+}
+
+@media screen and (max-width: 767px) /*om skärmen är mindre än 767 pixlar tillämpas regler för denna media quiery*/ {
+    .dish-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    article {
+        width: 80%; /*tar upp 80% av elementets bredd*/
+    }
+}
+
+
+
+.box {
+    width: 100%; /*varje box har förälders bredd*/
+}
+
+.box:nth-child(1) /*första elementet bland sina syskon*/ {
+    /*pseudoklass som väljer element beroende på positioneringen av föräldrar-elementet*/
+    grid-row: 1 / span 1; /*sätter innehållet till tillhörande box i rätt rad och kolumn*/
+    grid-column: 1 / span 2; /*span är hur många row boxen för sträcka sig över*/
+}
+
+.box:nth-child(2) /*andra elementet bland sina syskon*/ {
+    grid-row: 2 / span 1; /* rad två, tar upp en row-plats*/
+    grid-column: 1 / span 1; /* tar upp plats i första kolumen*/
+}
+
+.box:nth-child(3) {
+    grid-row: 2 / span 1; /*rad två*/
+    grid-column: 2 / span 1; /*kolumn två*/
+}
+
+.box:nth-child(4) {
+    grid-row: 3 / span 1; /*rad tre */
+    grid-column: 1 / span 1; /*kolumn ett */
+
+
+}
+
+.box:nth-child(5) {
+    grid-row: 3 / span 1; /*grid rad 3 i denna layout*/
+    grid-column: 2 / span 1; /* kolumn 2*/
+
+}
+
+.boxen {
+    max-height: 400px; /* targerar alla bilden i klassnamn boxen*/
+}
+
+.contact-info{
+    background-color: white; /*divens färg*/
+    padding: 4vh;
+    width: 30vh; /*bredden på diven*/
+    border-radius: 10px;
+    border: 20px solid #f69729; /*kant storlek, typ och färg*/
+}
+footer {
+    background: linear-gradient(45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB); /*färgglad gradient*/
+    background-size: 400% 400%; /* tar upp 400% av bredden och höjden av elementet för att skapa en större mönster på bakgrunden*/
+    animation: gradient 15s ease infinite; /* hur snabbt det skiftar*/
+    padding: 50px;
+    margin-top: 100px;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.social-media img {
+    height: 50px;
+    width: 50px;
+
+}
+
+/* boka bord css*/
+
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(220, 195, 181, 0.6);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.booking-form h2 {
+    margin-bottom: 20px;
+    color: black;
+    font-size: xx-large;
+}
+
+form {
+    display: flex; /* Hemsidans Boka bord formulär är i en flexbox */
+    flex-direction: column; /* flexbox layouten renderas i kolumner */
+    align-items: flex-start; /*innehållet börjar så som man läser vänster i höger, högst upp i vänstra hörn*/
+    width: 80%; /* har 80% av möjliga vidden på formuläret */
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc; /* kanten är vit till "boka bord formen", vanligt sträck */
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+
+#knappen {
+    padding: 10px 20px;
+    background-color: #008000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#knappen:hover {
+    background-color: #300064; /* Boka knappen ändrar färg när man hovrar*/
+
+}
