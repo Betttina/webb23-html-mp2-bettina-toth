@@ -1,21 +1,27 @@
-body {
-    background-image: url('bilder/högreupplös.jpg'); /* hänvisning till bakgrundsbilden */
-    background-size: cover; /* täcker hela hemsidan med vald bild, blir bakgrundsbild */
-    background-position: center; /*centrerar bakgrundsbilden på skärmen*/
-    color: white; /*textfärg på hela sidan */
-    font-family: "Open Sans",Arial,sans-serif; /* typsnittarna jag har valt, i denna ordning*/
-    letter-spacing: 2px; /*mellanrum mellan bokstäverna, gör det mer luftigt och lättläst */
+:root {
+    --background-image: url('bilder/högreupplös.jpg');
+    --background-color: white;
+    --font-family-body: "Open Sans", Arial, sans-serif;
+    --font-family-main: "Inconsolata", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --letter-spacing: 2px;
 }
+
+body {
+    background-image: var(--background-image);
+    background-size: cover;
+    background-position: center;
+    color: var(--background-color);
+    font-family: var(--font-family-body);
+    letter-spacing: var(--letter-spacing);
+} /* variabler för bakgrundsbilden, bakgrundsfärgen, typsnittet för body-elementet och bokstavsavstånd */
 
 main {
-    font-family: "Inconsolata", "Helvetica Neue", Helvetica, Arial, sans-serif;
-} /* typsnitten som används inom main taggen på hemsidan i prioritetsordning. ordningen är hemsidans rendering */
-
-
-.container {
-    display: flex; /*placerad i en flexbox layout*/
+    font-family: var(--font-family-main); /* variabel för typsnitten i main taggen */
 }
 
+.container {
+    display: flex; /* placerar elementen i flexbox layout */
+}
 
 .sidebar {
     width: 25%; /* tar bara upp 25% av bredden av elementet */
